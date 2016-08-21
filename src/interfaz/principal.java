@@ -53,6 +53,12 @@ public class principal extends javax.swing.JFrame {
 
         jLabel3.setText("Cuota inicial:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
+
+        txtterreno.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtterrenoKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtterreno, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, 110, -1));
 
         txtcuotainicial.setEditable(false);
@@ -123,6 +129,17 @@ public class principal extends javax.swing.JFrame {
             
             txtterreno.requestFocusInWindow();
     }//GEN-LAST:event_cmdborrarActionPerformed
+
+    private void txtterrenoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtterrenoKeyTyped
+            char c=evt.getKeyChar(); 
+             
+         
+          if(!Character.isDigit(c) && c != '.') { 
+              getToolkit().beep();                
+              evt.consume(); 
+               
+          } 
+    }//GEN-LAST:event_txtterrenoKeyTyped
 
     /**
      * @param args the command line arguments
